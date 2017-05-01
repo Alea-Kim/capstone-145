@@ -40,7 +40,7 @@ Serial.print("Sensor: ");
 Serial.println(echoPin/2);
 Serial.print("Distance: ");
 Serial.println(distance);
-delay(100);
+delay(500);
 trigPin+=2;
 echoPin+=2;
 }
