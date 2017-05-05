@@ -12,7 +12,7 @@ int echoPin = 2;
 long duration;
 int distance;
 void setup() {
-for(int i = 0; i<6;i++){
+for(int i = 0; i<5;i++){
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an Output
   pinMode(echoPin, INPUT); // Sets the echoPin as an Input
   trigPin+=2;
@@ -22,8 +22,8 @@ Serial.begin(9600); // Starts the serial communication
 Serial.print("TEST");
 }
 void loop() {
-if (trigPin == 13) trigPin = 1;
-if (echoPin == 14) echoPin = 2;
+if (trigPin == 11) trigPin = 1;
+if (echoPin == 12) echoPin = 2;
 // Clears the trigPin
 digitalWrite(trigPin, LOW);
 delayMicroseconds(2);
