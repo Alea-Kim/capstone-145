@@ -1,11 +1,11 @@
 //#include <UIPEthernet.h>
 
 // defines data array per sensor
-int arr1[10];
-int arr2[10];
-int arr3[10];
-int arr4[10];
-int arr5[10];
+int arr1[60];
+int arr2[60];
+int arr3[60];
+int arr4[60];
+int arr5[60];
 // defines pins numbers
 int trigPin[5] = {A5,A3,2,4,6};
 int echoPin[5] = {A4,A2,3,5,7};
@@ -39,8 +39,6 @@ int tobin(int distance, int m){
 }
 
 void loop() {
-
-  if (ch == 5) ch = 0;
   if (num == 10) {
     for (int i=0; i<10; i++){
       Serial.print(arr1[i]);
@@ -60,23 +58,18 @@ void loop() {
     num = 0;
   }
   // Calculating the distance
-  distance= getDistance(ch);
   // Prints the distance on the Serial Monitor
-  switch(ch){
-    case 0: arr1[num] = tobin(distance, maxx[0]);
-            break;
-    case 1: arr2[num] = tobin(distance, maxx[1]);
-            break;
-    case 2: arr3[num] = tobin(distance,  maxx[2]);
-            break;
-    case 3: arr4[num] = tobin(distance,  maxx[3]);
-            break;
-    case 4: arr5[num] = tobin(distance,  maxx[4]);
-            num++;
-            break;
-  }
-  delay(10);
-  ch++;
+  arr1[num] = tobin(getDistance(0), maxx[0]);
+  delay(200);
+  arr2[num] = tobin(getDistance(1), maxx[1]);
+  delay(200);
+  arr3[num] = tobin(getDistance(2),  maxx[2]);
+  delay(200);
+  arr4[num] = tobin(getDistance(3),  maxx[3]);
+  delay(200);
+  arr5[num] = tobin(getDistance(4),  maxx[4]);
+  delay(200);
+  num++;
 }
 
 long getDistance(int ch){
