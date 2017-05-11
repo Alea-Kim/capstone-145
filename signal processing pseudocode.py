@@ -53,10 +53,12 @@ MinuteAve =(count1+count2+count3+count4+count5)/5
 #range: 11-30   	Moderately (around 5 - 10 person move forward per minute)
 #range 31 - 60 0's 	Continuously   (around 10 - 15 person move forward per minute)
 
+--- DAPAT MATRY TO TO CONFIRM --------------------------
+
 print "Is the line moving?"
 if(MinuteAve <= 10):
 	print "Not much."
-	print "around 0 - 5 person move/s forward per minute"
+	print "around 0 - 5 person move/s forward per minute" 
 else if(MinuteAve >=11 or MinuteAve <= 30):
 	print "Moderately."
 	print "around 5 - 10 person move forward per minute"
@@ -64,3 +66,8 @@ else if(MinuteAve >=31 or MinuteAve <= 60):
 	print "Continuously."
 	print "around 10 - 15 person move/s forward per minute"
 
+
+
+#GET DATA FOR THE FF:
+#Ilang tao kada pila until sa point na pinili namin
+#
